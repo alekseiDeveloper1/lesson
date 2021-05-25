@@ -58,8 +58,8 @@ function detectPersonalLevel() {
 
 detectPersonalLevel();
 
-function showMyDB() {
-  if (privat == false) {
+function showMyDB(hidden) {
+  if (!hidden) {
     console.log(personalMovieDB);
   }
 }
@@ -67,9 +67,9 @@ function showMyDB() {
 showMyDB();
 
 function writeYourGenres() {
-  for (let i = 0; i < 2; i++) {
+  for (let i = 1; i <= 3; i++) {
     const likeGen = prompt(`любимый жанр?${i}`, "");
-    personalMovieDB.genres[i] = likeGen;
+    personalMovieDB.genres[i-1] = likeGen;
   }
 }
 
